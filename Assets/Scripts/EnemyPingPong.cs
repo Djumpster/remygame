@@ -4,7 +4,7 @@ public class EnemyPingPong : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private Rigidbody2D rigidBody;
-    [SerializeField] private GroundedChecker groundedChecker;
+    [SerializeField] private WallChecker wallChecker;
 
     [SerializeField] private Transform graphic;
 
@@ -12,9 +12,7 @@ public class EnemyPingPong : MonoBehaviour
 
 
     void Update()
-    {
-        float input = 1f;
-
+    {        
         float velocity_x = GetHorizontalVelocity();
         rigidBody.velocity = new Vector2(velocity_x, rigidBody.velocity.y);
         SetForward(velocity_x);
@@ -22,6 +20,11 @@ public class EnemyPingPong : MonoBehaviour
 
     private float GetHorizontalVelocity()
     {
+        if (wallChecker.TouchesWall)
+        {
+            moveDirection *= -1f;
+        }
+
         return moveDirection * moveSpeed;
     }
 
