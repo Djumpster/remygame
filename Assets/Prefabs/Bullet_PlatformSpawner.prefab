@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114772957306991316}
   - component: {fileID: 114552471839189946}
   m_Layer: 8
-  m_Name: Bullet
+  m_Name: Bullet_PlatformSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

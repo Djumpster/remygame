@@ -17,9 +17,7 @@ public class Player : MonoBehaviour
         float velocity_x = GetHorizontalVelocity();
         float velocity_y = GetVerticalVelocity();
 
-        rigidBody.velocity = new Vector2(velocity_x, rigidBody.velocity.y + velocity_y);
-
-        SetForward(velocity_x);
+        rigidBody.velocity = new Vector2(velocity_x, rigidBody.velocity.y + velocity_y);                
     }
 
     private float GetVerticalVelocity()
@@ -35,25 +33,11 @@ public class Player : MonoBehaviour
                 velocity_y = jumpSpeed;
             }            
         }
-
         return velocity_y;
     }
 
     private float GetHorizontalVelocity()
     {
         return Input.GetAxis("Horizontal") * moveSpeed;
-    }
-
-
-    private void SetForward(float velocity)
-    {
-        if (velocity > 0f)
-        {
-            graphic.forward = Vector3.right;
-        }
-        if (velocity < 0f)
-        {
-            graphic.forward = Vector3.left;
-        }
     }
 }

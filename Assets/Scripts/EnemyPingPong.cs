@@ -14,8 +14,7 @@ public class EnemyPingPong : MonoBehaviour
     void Update()
     {        
         float velocity_x = GetHorizontalVelocity();
-        rigidBody.velocity = new Vector2(velocity_x, rigidBody.velocity.y);
-        SetForward(velocity_x);
+        rigidBody.velocity = new Vector2(velocity_x, rigidBody.velocity.y);       
     }
 
     private float GetHorizontalVelocity()
@@ -26,17 +25,5 @@ public class EnemyPingPong : MonoBehaviour
         }
 
         return moveDirection * moveSpeed;
-    }
-
-    private void SetForward(float velocity)
-    {
-        if (velocity > 0f)
-        {
-            graphic.forward = Vector3.right;
-        }
-        if (velocity < 0f)
-        {
-            graphic.forward = Vector3.left;
-        }
     }
 }

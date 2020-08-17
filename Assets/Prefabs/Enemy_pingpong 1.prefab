@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 61386730382527944}
   - component: {fileID: 114251381290569748}
   - component: {fileID: 114229039996487768}
+  - component: {fileID: 114651986210648802}
   m_Layer: 9
   m_Name: Enemy_pingpong 1
   m_TagString: Untagged
@@ -150,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558354812910236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.32, y: -1.5, z: -0.025390625}
+  m_LocalPosition: {x: 15.71, y: 2.17, z: -0.025390625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4956249361185104}
@@ -466,6 +467,19 @@ MonoBehaviour:
   wallPoints:
   - {fileID: 4859795693474394}
   - {fileID: 4475023706196326}
+--- !u!114 &114651986210648802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1558354812910236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06947ec17daf03b4cb4ac2811a39f781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBody: {fileID: 50618518709986936}
+  graphic: {fileID: 4956249361185104}
 --- !u!135 &135133054977076972
 SphereCollider:
   m_ObjectHideFlags: 1
