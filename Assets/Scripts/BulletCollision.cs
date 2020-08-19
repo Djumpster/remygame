@@ -17,16 +17,15 @@ public class BulletCollision : MonoBehaviour
     private void Update()
     {
         Vector3 currentPosition = transform.position;
-
         Vector3 traveled = currentPosition - previousPosition;
-
-        RaycastHit2D hit = Physics2D.Raycast(previousPosition, traveled.normalized, traveled.magnitude, collisionLayers);
+        RaycastHit2D hit = Physics2D.Raycast(previousPosition, traveled.normalized, traveled.magnitude, collisionLayers);        
+        previousPosition = currentPosition;
 
         if (hit.collider != null)
-        {
-            transform.position = hit.point;
-
+        {            
             OnBulletCollision.Invoke(hit);
+            Debug.Log("I hit " + hit.collider.gameObject);
+            Debug.Break();
         }
     }
 }
